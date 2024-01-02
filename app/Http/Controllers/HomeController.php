@@ -35,11 +35,17 @@ class HomeController extends Controller
             'city' => 'required|string|max:150',
         ]);
 
+        $name = strtoupper($request->name);
+        $age = strtoupper($request->age);
+        $city = strtoupper($request->city);
+
         $penduduk = new penduduk();
-        $penduduk->name = $request->name;
-        $penduduk->age = $request->age;
-        $penduduk->city = $request->city;
+        $penduduk->name = $name;
+        $penduduk->age = $age;
+        $penduduk->city = $city;
+        // dd($penduduk);
         $penduduk->save();
+
 
         return redirect()->route('home');
     }
