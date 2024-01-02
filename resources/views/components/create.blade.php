@@ -18,17 +18,9 @@
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="name" name="name">
-                        </div>    
-                        <div class="mb-3">
-                            <label for="age" class="form-label">Usia</label>
-                            <input type="text" class="form-control" id="age" name="age">
-                        </div>     
-                        <div class="mb-3">
-                            <label for="city" class="form-label">Kota</label>
-                            <input type="text" class="form-control" id="city" name="city">
-                        </div>                         
+                            <label for="data_penduduk" class="form-label">Nama, Usia & Kota</label>
+                            <input type="text" class="form-control" id="data_penduduk" name="data_penduduk">
+                        </div>                           
                     </div>
                     <div class="card-footer text-center">
                         <button type="submit" class="btn btn-success px-5">

@@ -30,20 +30,18 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:150',
-            'age' => 'required|string|max:20',
-            'city' => 'required|string|max:150',
+            'data_penduduk' => 'required|string|max:250',
         ]);
 
-        $name = strtoupper($request->name);
-        $age = strtoupper($request->age);
-        $city = strtoupper($request->city);
+        $dataPenduduk = explode(' ', $request->data_penduduk);
+        $name = isset($dataPenduduk[0]) ? strtoupper($dataPenduduk[0]) : '';
+        $age = isset($dataPenduduk[1]) ? strtoupper($dataPenduduk[1]) : '';
+        $city = isset($dataPenduduk[2]) ? strtoupper($dataPenduduk[2]) : '';
 
         $penduduk = new penduduk();
         $penduduk->name = $name;
         $penduduk->age = $age;
         $penduduk->city = $city;
-        // dd($penduduk);
         $penduduk->save();
 
 
