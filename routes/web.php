@@ -21,6 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('cms')->group(function () {
-    Route::get('/penduduk/create', [HomeController::class, 'create'])->name('form.create.penduduk');
-    Route::post('penduduk', [HomeController::class, 'store'])->name('store.penduduk');
+    Route::get('/pengguna/create', [HomeController::class, 'create'])->name('form.create.pengguna');
+    Route::post('pengguna', [HomeController::class, 'store'])->name('store.pengguna');
 });

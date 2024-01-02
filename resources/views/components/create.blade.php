@@ -12,14 +12,14 @@
         <div class="content-table">
             <div class="card">
                 <div class="card-header text-center">
-                    <h1 class="h3" style="font-weight: 700">Tambah Data Penduduk</h1>
+                    <h1 class="h3" style="font-weight: 700">Tambah Data Pengguna</h1>
                 </div>
-                <form action="{{ route('store.penduduk') }}" method="post">
+                <form action="{{ route('store.pengguna') }}" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="data_penduduk" class="form-label">Nama, Usia & Kota</label>
-                            <input type="text" class="form-control" id="data_penduduk" name="data_penduduk">
+                            <label for="data_pengguna" class="form-label">Nama, Usia & Kota</label>
+                            <input type="text" class="form-control" id="data_pengguna" name="data_pengguna">
                         </div>                           
                     </div>
                     <div class="card-footer text-center">

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\penduduk;
+use App\Models\pengguna;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,8 +12,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $penduduk = penduduk::all();
-        return view('home', compact('penduduk'));
+        $pengguna = pengguna::all();
+        return view('home', compact('pengguna'));
     }
 
     /**
@@ -30,19 +30,19 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'data_penduduk' => 'required|string|max:250',
+            'data_pengguna' => 'required|string|max:250',
         ]);
 
-        $dataPenduduk = explode(' ', $request->data_penduduk);
-        $name = isset($dataPenduduk[0]) ? strtoupper($dataPenduduk[0]) : '';
-        $age = isset($dataPenduduk[1]) ? strtoupper($dataPenduduk[1]) : '';
-        $city = isset($dataPenduduk[2]) ? strtoupper($dataPenduduk[2]) : '';
+        $datapengguna = explode(' ', $request->data_pengguna);
+        $name = isset($datapengguna[0]) ? strtoupper($datapengguna[0]) : '';
+        $age = isset($datapengguna[1]) ? strtoupper($datapengguna[1]) : '';
+        $city = isset($datapengguna[2]) ? strtoupper($datapengguna[2]) : '';
 
-        $penduduk = new penduduk();
-        $penduduk->name = $name;
-        $penduduk->age = $age;
-        $penduduk->city = $city;
-        $penduduk->save();
+        $pengguna = new pengguna();
+        $pengguna->name = $name;
+        $pengguna->age = $age;
+        $pengguna->city = $city;
+        $pengguna->save();
 
 
         return redirect()->route('home');

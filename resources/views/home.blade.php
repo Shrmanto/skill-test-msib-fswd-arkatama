@@ -12,10 +12,10 @@
         <div class="content-table">
             <div class="card">
                 <div class="card-header text-center">
-                    <h1 class="h3" style="font-weight: 700">Penduduk</h1>
+                    <h1 class="h3" style="font-weight: 700">Pengguna</h1>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('form.create.penduduk') }}" class="btn btn-success my-4">
+                    <a href="{{ route('form.create.pengguna') }}" class="btn btn-success my-4">
                         Tambah Data
                     </a>
                     <table class="table">
@@ -29,7 +29,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $penduduk as $index => $data )
+                            @foreach ( $pengguna as $index => $data )
                             <tr>
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $data->name }}</td>
